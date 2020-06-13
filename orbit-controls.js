@@ -14,9 +14,7 @@
 //    Pan - right mouse, or arrow keys / touch: three finger swipe
 
 THREE.OrbitControls = function (object, domElement) {
-    
-    if (domElement === undefined) console.warn('THREE.OrbitControls: The second parameter "domElement" is now mandatory.');
-    if (domElement === document) console.error('THREE.OrbitControls: "document" should not be used as the target "domElement". Please use "renderer.domElement" instead.');
+
     this.object = object;
 
     this.domElement = (domElement !== undefined) ? domElement : document;
