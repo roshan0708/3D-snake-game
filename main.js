@@ -2,7 +2,7 @@ let WIDTH = window.innerWidth, HEIGHT = window.innerHeight;
 let aspectRatio = WIDTH / HEIGHT;
 let renderer = new THREE.WebGLRenderer({ antialias: true }), camera = new THREE.PerspectiveCamera(45, aspectRatio, 0.1, 1000), scene = new THREE.Scene();
 let controls = new THREE.OrbitControls(camera, renderer.domElement);
-let clock = new THREE.Clock(), text = document.createElement("div");
+let clock = new THREE.Clock(), text = document.createElement("div"), paragraph = document.createElement("p");
 controls.enableKeys = false;
 
 let mov = 5;
@@ -58,7 +58,9 @@ function init() {
     text.style.top = 20 + "px";
     text.style.left = 20 + "px";
     text.style.fontSize = 50 + "px";
-
+    paragraph.innerHTML = "Controls - 'w' for Vertically Up, 's' for Vertically Down and Basic Arrow Controls";
+    paragraph.style.fontSize = 20 + "px";
+    text.appendChild(paragraph);
     document.body.appendChild(text);
 
     clock.startTime = 0.0;
